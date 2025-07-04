@@ -1,1 +1,271 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --color-principal: #3F72AF;
+  --color-acento: #FFA500;
+  --color-acento-hover: #cc7a00;
+
+  --fondo-claro: #f4f6fa; /* NUEVO: fondo general claro más moderno */
+  --texto-claro: #1E293B;
+
+  --tarjeta-claro: #ffffff; /* NUEVO: fondo de tarjetas profesional tipo blanco humo */
+  --sombra-suave: 0 6px 20px rgba(0, 0, 0, 0.08); /* NUEVO: sombra profesional */
+
+  --fondo-oscuro: #0F172A;
+  --texto-oscuro: #F1F5F9;
+  --tarjeta-oscuro: #1E293B;
+
+  --borde: #e2e8f0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+
+  color: var(--texto-claro);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Tarjetas refinadas en modo claro */
+.card {
+  background: var(--tarjeta-claro);
+  padding: 24px;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--borde);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Sección sobre mí también con fondo claro elegante */
+
+/* Encabezado */
+.encabezado {
+  position: relative;
+  height: 100vh;
+  background: url('./assets/imagenlanding.jpg') center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+ 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.contenido-encabezado {
+  z-index: 2;
+}
+
+/* Navegación */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  color: var(--color-acento);
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-acento);
+}
+
+/* Avatar */
+.avatar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-principal);
+  margin-bottom: 1rem;
+}
+
+/* Tipografía destacada */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-principal);
+}
+
+.subtitulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.saludo {
+  font-size: 1.2rem;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Secciones */
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Botones */
+.boton,
+.btn-naranja,
+.btn-plomo {
+  font-family: 'Poppins', sans-serif;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.boton,
+.btn-naranja {
+  background-color: var(--color-acento);
+  color: #fff;
+}
+
+.boton:hover,
+.btn-naranja:hover {
+  background-color: var(--color-acento-hover);
+  color: #000;
+}
+
+.btn-plomo {
+  background-color: var(--color-principal);
+  color: white;
+}
+
+.btn-plomo:hover {
+  background-color: #2c5680;
+}
+
+/* Tarjetas */
+.card-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  background: var(--tarjeta-claro);
+  padding: 20px;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--borde);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+body.dark-mode .card {
+  background: var(--tarjeta-oscuro);
+  color: var(--texto-oscuro);
+  border-color: var(--color-principal);
+}
+
+/* Sobre mí */
+.sobre-mi {
+  border: 2px solid var(--color-principal);
+  border-radius: 20px;
+  background-color: var(--tarjeta-claro);
+  padding: 30px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.dark-mode .sobre-mi {
+  background-color: var(--tarjeta-oscuro);
+  color: var(--texto-oscuro);
+}
+
+/* Imágenes */
+.img-proyecto {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-principal);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  padding: 25px 0;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+
+/* Animación */
+@keyframes aparecerDesdeAbajo {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
